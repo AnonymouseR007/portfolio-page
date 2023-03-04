@@ -1,0 +1,299 @@
+:root {
+    --site-color-01: #4CF1FC;
+    --site-color-01-hover: #B32624;
+    --site-color-01-less: #70A1FA;
+    --site-color-02: #E6302E;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: #1e1e1e;    /* #1a253a; */
+
+}
+body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1000;
+    content: url(../img/fbbw.svg) url(../img/ig.png);
+}
+.wrapper-main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2.6rem;
+    line-height: 1.5;
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 2.8rem;
+    line-height: 1.5;
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 2.8rem;
+    line-height: 1.5;
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-transform: uppercase;
+}
+p {
+    font-size: 1.4rem;
+    line-height: 1.75;
+    color: #fff;
+    font-family: 'Roboto';
+}
+a {
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1.75;
+    font-weight: 600;
+    font-family: 'Roboto';
+}
+
+.header-main {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #AFC4EA;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.header-main-logo {
+    width: fit-content;
+    height: 100%;
+    padding-left: 60px;
+    display: flex;
+}
+.header-main-logo img {
+    height: 80px;
+    align-self: center;
+}
+
+.header-main-nav {
+    width: fit-content;
+    height: 100%;
+ 
+
+}
+
+.header-main-nav ul {
+    list-style: none; /* toto robim ked nemam css. reset, ale v resete to uz nemusim robit */
+    margin-left: 30px;
+
+    
+}
+
+.header-main-nav ul li {
+    display: inline;
+    float: left;/* float v tomto pripade eliminuje defaultne medzeri medzi linkami */
+        
+    
+}
+
+.header-main-nav ul li a{
+    padding: 0px 10px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 60px; /* always when using line-height: in nav and putting same height as main div is it centers it */
+    color: #000;
+    display: block;
+    height: 100%;
+    
+}
+.header-main-nav ul li a:hover{
+    color: #E6302E;
+    
+}
+
+.header-main-sm {
+    width: fit-content;
+    height: 100%;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    
+}
+.header-main-sm-fb {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/fb.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-fb:hover {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/fbbw.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-ig {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/igbw.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-ig:hover {
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/ig.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.burger-menu,
+.burger-menu-btn {
+    display: none;
+}
+
+/*font-family: 'Roboto', sans-serif; */
+
+@media only screen and (max-width: 600px) {
+    .wrapper-main {
+        width: calc(100% - 6%);
+     }
+    .burger-menu-btn {
+        display: block; /* So i see it againg cuz its not visible in browser (display none) */
+        margin-left: 15px;
+        width: 50px;
+        height: 50px;
+        background-image: url(../img/bgmenu.png), url(../img/bgclose.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center, center left 50px;         /* In orfer to hide second closing icon i need to push it to the left side of the border so 50 px and it hides */
+    }
+    .burger-menu {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 900;
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+    .burger-menu ul {
+        width: 100%;
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .burger-menu ul li {
+       flex-basis: 100%;
+       border-top: 2px solid #000;
+    }
+    .burger-menu ul li:last-child {
+        flex-basis: 100%;
+        border-bottom: 2px solid #000;
+     }
+    .burger-menu ul li a {
+        display: block;
+        height: 100%;
+        font-size: 3rem;
+        padding: 30px 0;
+        flex-basis: 100%;
+        text-align: center;
+     }
+     
+    .header-main-logo {
+        padding-left: 20px;
+    }
+    .header-main-nav {
+        display: none;
+    }
+    .header-main-sm {
+        padding-right: 20px;
+        
+    }
+}
+
+/* 601 px to 768 px  */
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .wrapper-main {
+        width: calc(100% - 6%);
+    } 
+    .burger-menu-btn {
+        display: block; /* So i see it againg cuz its not visible in browser (display none) */
+        margin-left: 15px;
+        width: 50px;
+        height: 50px;
+        background-image: url(../img/bgmenu.png), url(../img/bgclose.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center, center left 50px;         /* In orfer to hide second closing icon i need to push it to the left side of the border so 50 px and it hides */
+    }
+    .burger-menu {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 900;
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+    .burger-menu ul {
+        width: 100%;
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .burger-menu ul li {
+       flex-basis: 100%;
+       border-top: 2px solid #000;
+    }
+    .burger-menu ul li:last-child {
+        flex-basis: 100%;
+        border-bottom: 2px solid #000;
+     }
+    .burger-menu ul li a {
+        display: block;
+        height: 100%;
+        font-size: 3rem;
+        padding: 30px 0;
+        flex-basis: 100%;
+        text-align: center;
+     }
+    .header-main-logo {
+        padding-left: 20px;
+    }
+    .header-main-nav {
+        display: none;
+    }
+    .header-main-sm {
+        padding-right: 20px;
+        
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .wrapper-main {
+        width: calc(100% - 6%);
+        
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .wrapper-main {
+        width: calc(100% - 6%);
+        
+    }
+
+}
